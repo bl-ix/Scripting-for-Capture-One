@@ -1,0 +1,6 @@
+tell application "Capture One 22"
+	tell current document
+		if not (exists collection named "Quick Collection") then make new collection with properties {name:"Quick Collection", kind:album}
+		add inside (get collection named "Quick Collection") variants (get variants whose selected is true)
+	end tell
+end tell
