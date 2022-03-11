@@ -1,0 +1,11 @@
+set out_list to {}
+
+tell application "Capture One 22"
+	tell current document
+		repeat with i in (get variants whose selected is true)
+			copy (name of i as text) & return to end of out_list
+		end repeat
+	end tell
+end tell
+
+set the clipboard to out_list as text
